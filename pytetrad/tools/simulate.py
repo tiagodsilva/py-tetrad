@@ -8,7 +8,7 @@ import os
 
 try:
     resources_path = os.path.join(os.path.dirname(__file__), '..') 
-    jpype.startJVM(classpath=["{resources_path}/resources/tetrad-current.jar"]) 
+    jpype.startJVM(classpath=[f"{resources_path}/resources/tetrad-current.jar"]) 
 except OSError:
     pass
 
