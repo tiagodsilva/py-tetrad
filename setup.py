@@ -18,7 +18,8 @@ setuptools.setup(
         'JPype1',
     ],
     url='https://github.com/cmu-phil/py-tetrad',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(), 
+    package_data={'pytetrad': ['resources/tetrad-current.jar']}, 
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

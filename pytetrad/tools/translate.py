@@ -4,16 +4,16 @@
 #
 import jpype
 import jpype.imports
+import os 
+import sys 
 
 try:
-    jpype.startJVM(classpath=[f"resources/tetrad-current.jar"])
+    resources_path = os.path.join(os.path.dirname(__file__), '..') 
+    jpype.startJVM(classpath=[f"{resources_path}/resources/tetrad-current.jar"]) 
 except OSError:
     pass
 
-import os
-import sys
-
-## Some functions wrapping various classes in Tetrad. Feel free to just steal
+# Some functions wrapping various classes in Tetrad. Feel free to just steal
 ## the relevant code for your own projects, or 'pip install' this Github directory
 ## and call these functions. will add more named parameters to help one see which 
 ## methods for the the searches can be controlled.

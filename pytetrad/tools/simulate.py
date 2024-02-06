@@ -4,9 +4,11 @@
 #
 import jpype
 import jpype.imports
+import os 
 
 try:
-   jpype.startJVM(classpath=[f"resources/tetrad-current.jar"])
+    resources_path = os.path.join(os.path.dirname(__file__), '..') 
+    jpype.startJVM(classpath=["{resources_path}/resources/tetrad-current.jar"]) 
 except OSError:
     pass
 

@@ -5,13 +5,15 @@
 
 import jpype
 import jpype.imports
+import os 
 
 try:
-    jpype.startJVM(jpype.getDefaultJVMPath(), "-Xmx40g", classpath=[f"resources/tetrad-current.jar"])
+    resources_path = os.path.join(os.path.dirname(__file__), '..') 
+    jpype.startJVM(jpype.getDefaultJVMPath(), "-Xmx40g", classpath=[f"{resources_path}/resources/tetrad-current.jar"]) 
 except OSError:
     pass
 
-import tools.translate as tr
+import pytetrad.tools.translate as tr
 import edu.cmu.tetrad.search as ts
 import edu.cmu.tetrad.data as td
 import edu.cmu.tetrad.graph as gr
